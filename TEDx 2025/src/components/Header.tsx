@@ -6,7 +6,7 @@ import tedxLogo from '../assets/images/TEDx Bowen Logo.png'
 const navigation = [
   { name: 'Home', href: '#' },
   { name: 'About', href: '#' },
-  { name: 'Ticket', href: '#' },
+  { name: 'Event', href: '#' },
 ]
 
 
@@ -15,7 +15,7 @@ export default function Header() {
 
   return (
     <div className="bg-gray-900">
-      <header className="absolute inset-x-0 top-0 z-50">
+      <header className="absolute inset-x-0 top-0 z-50 mx-12" >
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
             <a href="/" className="-m-1.5 p-1.5">
@@ -23,7 +23,7 @@ export default function Header() {
               <img
                 alt="logo"
                 src={tedxLogo}
-                className="h-8 w-auto"
+                className="h-12 w-auto"
               />
             </a>
           </div>
@@ -37,18 +37,18 @@ export default function Header() {
               <Menu aria-hidden="true" className="size-6" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12">
+          <div className="hidden lg:flex lg:gap-x-12 items-center">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-white">
+              <a key={item.name} href={item.href} className="text-sm/6 font-extralight text-white">
                 {item.name}
               </a>
-            ))}
-          </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm/6 font-semibold text-white">
+            ))} <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="#" className="text-sm/6 font-extralight text-white bg-red-500 p-2  rounded-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
               Buy your Tickets <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
+          </div>
+         
         </nav>
         <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
           <div className="fixed inset-0 z-50" />
@@ -74,7 +74,7 @@ export default function Header() {
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-white/10">
-                <div className="space-y-2 py-6">
+                <div className="flex justify-between py-2">
                   {navigation.map((item) => (
                     <a
                       key={item.name}
@@ -84,14 +84,15 @@ export default function Header() {
                       {item.name}
                     </a>
                   ))}
-                </div>
-                <div className="py-6">
-                  <a
+                  {/* <a
                     href="#"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-red-500 hover:bg-white/5"
                   >
                     Buy your Tickets <span aria-hidden="true">&rarr;</span> 
-                  </a>
+                  </a> */}
+                </div>
+                <div className="py-6">
+                  
                 </div>
               </div>
             </div>

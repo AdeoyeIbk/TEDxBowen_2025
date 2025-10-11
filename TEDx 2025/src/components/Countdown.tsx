@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const TARGET_DATE = new Date("2025-11-25T00:00:00");
+const TARGET_DATE = new Date("2025-11-28T00:00:00");
 
 function getTimeRemaining(to: Date) {
   const total = Math.max(0, to.getTime() - Date.now());
