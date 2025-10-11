@@ -18,7 +18,7 @@ return () => io.disconnect();
 }, []);
 
 return (
-<section className="relative bg-left bg-no-repeat bg-cover" style={{ backgroundImage: `url(${bg})`, }}>
+<section className="relative bg-left bg-no-repeat bg-cover w-full h-full" style={{ backgroundImage: `url(${bg})`, }}>
   {/* small inline style for the fade animation used by Tailwind utilities */}
   <style>
     {
@@ -37,7 +37,11 @@ return (
     }
   </style>
 
-  <div className="max-w-7xl mx-auto flex items-start gap-8 px-4 md:px-8 pt-[25rem] md:pt-[25rem] pb-8">
+    <div className="max-w-7xl mx-auto flex items-start gap-8 px-4 md:px-8 pt-[25rem] md:pt-[25rem] pb-8">
+       <div className="flex-shrink-0 w-1/3 md:w-1/4 lg:w-1/5 flex items-start">
+      <img src={senateImg} alt="Bowen Senate Building"
+        className="w-full h-full object-cover rounded-sm shadow-lg" />
+    </div>
     <div className="flex-1 flex flex-col items-end text-right pr-6">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 fade-element">
         What is TEDx Bowen University?
@@ -52,10 +56,7 @@ return (
       </p>
     </div>
 
-    <div className="flex-shrink-0 w-1/3 md:w-1/4 lg:w-1/5 flex items-start">
-      <img src={senateImg} alt="Bowen Senate Building"
-        className="w-full h-auto object-cover rounded-sm shadow-lg fade-element" style={{ maxHeight: "60vh" }} />
-    </div>
+   
   </div>
 </section>
 );

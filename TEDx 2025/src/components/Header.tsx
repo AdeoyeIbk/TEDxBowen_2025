@@ -74,7 +74,7 @@ export default function Header() {
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-white/10">
-                <div className="flex justify-between py-2">
+                <div className="flex flex-col justify-between py-2">
                   {navigation.map((item) => (
                     <a
                       key={item.name}
@@ -84,12 +84,9 @@ export default function Header() {
                       {item.name}
                     </a>
                   ))}
-                  {/* <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-red-500 hover:bg-white/5"
-                  >
-                    Buy your Tickets <span aria-hidden="true">&rarr;</span> 
-                  </a> */}
+                 <a href="#" className="text-sm/6 font-extralight text-white bg-red-500 p-2  rounded-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2">
+              Buy your Tickets <span aria-hidden="true">&rarr;</span>
+            </a>
                 </div>
                 <div className="py-6">
                   
