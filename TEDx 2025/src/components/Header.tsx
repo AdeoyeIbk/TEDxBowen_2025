@@ -4,9 +4,9 @@ import { Menu, X } from "lucide-react";
 import tedxLogo from "../assets/images/TEDx Bowen Logo.png";
 
 const navigation = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Event", href: "#" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Event", href: "/event" },
 ];
 
 export default function Header() {
@@ -63,7 +63,7 @@ export default function Header() {
           <div className="fixed inset-0 z-50" />
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10 text-red-500">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <a href="" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <img alt="logo" src={tedxLogo} className="h-8 w-auto" />
               </a>
@@ -90,7 +90,7 @@ export default function Header() {
                   ))}
                   <a
                     href="#"
-                    className="text-sm/6 font-extralight text-white bg-red-500 p-2  rounded-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                    className="text-sm/6 font-bold text-white bg-red-500 p-2  rounded-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                   >
                     Buy your Tickets <span aria-hidden="true">&rarr;</span>
                   </a>
