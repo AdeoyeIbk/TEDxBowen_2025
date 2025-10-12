@@ -11,7 +11,8 @@ type TimeLeft = {
 function getTimeLeft(target: Date): TimeLeft {
   const now = Date.now();
   const diff = target.getTime() - now;
-  if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0, expired: true };
+  if (diff <= 0)
+    return { days: 0, hours: 0, minutes: 0, seconds: 0, expired: true };
 
   const secondsTotal = Math.floor(diff / 1000);
   const days = Math.floor(secondsTotal / (24 * 3600));
@@ -28,8 +29,13 @@ interface Props {
   onExpire?: () => void;
 }
 
-export default function CountdownTimer({ targetDate, className = "", onExpire }: Props) {
-  const target = typeof targetDate === "string" ? new Date(targetDate) : targetDate;
+export default function CountdownTimer({
+  targetDate,
+  className = "",
+  onExpire,
+}: Props) {
+  const target =
+    typeof targetDate === "string" ? new Date(targetDate) : targetDate;
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => getTimeLeft(target));
 
   useEffect(() => {
@@ -59,30 +65,30 @@ export default function CountdownTimer({ targetDate, className = "", onExpire }:
         <p className="text-black text-sm">Countdown to TEDx 2025</p>
       </div>
 
-      <div className="flex gap-8 items-center text-red-500">
+      <div className="flex gap-4 sm:gap-8 items-center text-red-500">
         <div className="text-center">
-          <h4 className="text-5xl font-semibold">{timeLeft.days}</h4>
+          <h4 className="text-3xl sm:text-5xl font-semibold">{timeLeft.days}</h4>
           <p className="text-sm">Days</p>
         </div>
 
         <span className="font-bold">:</span>
 
         <div className="text-center">
-          <h4 className="text-5xl font-semibold">{fmt(timeLeft.hours)}</h4>
+          <h4 className="text-3xl sm:text-5xl font-semibold">{fmt(timeLeft.hours)}</h4>
           <p className="text-sm">Hours</p>
         </div>
 
         <span className="font-bold">:</span>
 
         <div className="text-center">
-          <h4 className="text-5xl font-semibold">{fmt(timeLeft.minutes)}</h4>
+          <h4 className="text-3xl sm:text-5xl font-semibold">{fmt(timeLeft.minutes)}</h4>
           <p className="text-sm">Minutes</p>
         </div>
 
         <span className="font-bold">:</span>
 
         <div className="text-center">
-          <h4 className="text-5xl font-semibold">{fmt(timeLeft.seconds)}</h4>
+          <h4 className="text-3xl sm:text-5xl font-semibold">{fmt(timeLeft.seconds)}</h4>
           <p className="text-sm">Seconds</p>
         </div>
       </div>
