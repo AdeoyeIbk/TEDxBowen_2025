@@ -79,7 +79,7 @@ export default function Footer() {
           </div>
 
           {/* right: links */}
-          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start md:items-stretch md:w-2/3">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start md:items-stretch md:w-2/3 md:ml-32">
             <div className="flex flex-col gap-3">
               <h6 className="font-semibold text-lg md:text-xl">About Us</h6>
               <nav className="flex flex-col gap-2 footer-link-list">
