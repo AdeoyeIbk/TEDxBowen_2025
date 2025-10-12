@@ -10,10 +10,10 @@ export default function BowenSection() {
     >
       <div className="max-w-full mx-auto relative min-h-[28rem]">
         <div className="absolute top-0 right-0 h-full flex flex-col items-end text-right pr-6 p-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 fade-element">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 ">
             What is TEDx Bowen University?
           </h2>
-          <p className="text-white leading-relaxed max-w-xl fade-element text-sm">
+          <p className="text-white leading-relaxed max-w-xl  text-sm">
             TEDxBowen University is an independently organized TEDx event
             officially licensed by TEDx and proudly hosted at Bowen University,
             Iwo, Osun State. It is part of TED's global movement to share “ideas
