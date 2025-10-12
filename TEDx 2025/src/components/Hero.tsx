@@ -37,10 +37,10 @@ export default function Hero() {
   }, [isMobile, headingLines.length]);
 
   return (
-    <div className="w-full flex items-center pt-8 md:pt-30 px-4 md:px-24 max-h-screen">
+    <div className="w-full flex items-center justify-center pt-8 md:pt-30 px-4 md:px-24 h-lvh">
       <picture className="absolute inset-0 -z-10 block h-full w-full">
         {/* Desktop (md+) uses heroBg, mobile/tablet uses smallHeroBg */}
-        <source media="(min-width: 768px)" srcSet={heroBg} />
+        <source media="(min-width: 768px)" srcSet={heroBg}/>
         <img
           src={smallHeroBg}
           alt="hero background"
@@ -81,7 +81,7 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col gap-8 md:gap-12 h-full items-center">
-          <img src={themeImg} alt="" className="max-h-full md:max-h-[21rem]" />
+          <img src={themeImg} alt="" className="max-h-72 md:max-h-[21rem]" />
 
           <div
             className="flex items-center gap-2 sm:gap-8 pb-2 sm:pb-6 text-lg sm:text-2xl"
