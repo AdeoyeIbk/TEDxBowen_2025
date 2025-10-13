@@ -1,9 +1,12 @@
 // import { motion } from "motion/react"
-// import Countdown from './Countdown'
+
+
+
 import Hero from "./Hero"
 import BowenSection from "./About"
 import Quote from "./Quote"
 import CountdownSection from "./CountdownSection"
+import TicketSection from "./TicketSection"
 import Footer from "./Footer"
 
 export default function Index() {
@@ -20,6 +23,7 @@ export default function Index() {
   whileHover={{ scale: 1.1 }}
   whileTap={{ scale: 0.9 }}
 >Click Me</motion.button>  */}
+      <TicketSection />
   <Footer />
     </div>)
 }
