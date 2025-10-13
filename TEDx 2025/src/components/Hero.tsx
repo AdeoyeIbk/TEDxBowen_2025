@@ -5,7 +5,9 @@ import Button from "./ui/Button";
 import heroBg from "../assets/images/hero_bg.webp";
 import underline from "../assets/images/underline.png";
 import themeImg from "../assets/images/theme.png";
-import smallHeroBg from "../assets/images/smaller_hero-bg.png";
+// import smallHeroBg from "../assets/images/smaller_hero-bg.png";
+import smallHeroBuilding from "../assets/images/hero_building.png";
+import smallHeroBg from "../assets/images/hero-bg.png"
 
 export default function Hero() {
   const headingLines = ["Inspire minds.", "Propel action.", "Create tomorrow."];
@@ -61,10 +63,19 @@ export default function Hero() {
           className="h-full w-full object-cover object-center md:object-top"
         />
       </motion.picture>
+      {/* Show building image behind content on mobile */}
+      {isMobile && (
+        <motion.img 
+          src={smallHeroBuilding} 
+          alt="small hero building" 
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md md:hidden pointer-events-none select-none mx-auto z-0"
+          style={{ display: "block" }}
+        />
+      )}
       <Header />
 
       <motion.div 
-        className="flex flex-col md:flex-row w-full text-white sm:items-start md:items-center items-center justify-between gap-8"
+        className="flex flex-col md:flex-row w-full text-white sm:items-start md:items-center items-center justify-between gap-8 z-10"
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
