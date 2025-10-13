@@ -42,7 +42,7 @@ export default function TicketSection() {
       <img
         src={ticketImage}
         alt="ticketImage"
-        className="max-w-240 h-auto mx-auto -mb-160 -top-76 z-20 relative"
+        className=" h-auto mx-auto -mb-152 -top-68 z-20 relative max-w-[320px] md:max-w-[480px] lg:max-w-[640px] "
       />
       <div className="flex flex-col sm:flex-row w-full justify-between"></div>
       <div className="relative isolatepx-6 py-24 sm:py-32 lg:px-8">
