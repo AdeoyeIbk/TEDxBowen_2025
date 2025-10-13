@@ -44,7 +44,7 @@ export default function Hero() {
 
   return (
     <motion.div 
-      className="w-full flex flex-col lg:flex-row items-center pt-8 md:pt-30 px-4 md:px-24 h-lvh"
+      className="w-full flex flex-col lg:flex-row items-center pt-24 md:pt-30 px-4 md:px-24 h-lvh"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
