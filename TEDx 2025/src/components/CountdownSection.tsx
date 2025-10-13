@@ -3,7 +3,7 @@ import bg from "../assets/images/countdown-bg.png";
 import CountdownTimer from "./CountdownTimer";
 
 export default function CountdownSection() {
-  // set target date (adjust timezone/ISO string as needed)
+  // set target date 
   const targetDate = new Date("2025-11-28T00:00:00"); // YYYY-MM-DDTHH:mm:ss (local)
 
   return (
@@ -15,18 +15,18 @@ export default function CountdownSection() {
       className="relative bg-left bg-no-repeat bg-cover w-full h-[100vh]"
       style={{ backgroundImage: `url(${bg})` }}
     >
-        {/* Two-column flex layout: left text (top), right countdown (bottom-right) */}
-        <div className="flex flex-col md:flex-row w-full h-full pt-32 pl-6 md:pl-32 pr-6 md:pr-24 pb-8">
-          {/* Left column: keeps text at the top */}
+        {/* Vertical layout on mobile/tablet, horizontal on large screens */}
+        <div className="flex flex-col lg:flex-row w-full h-full pt-32 pl-6 md:pl-32 pr-6 md:pr-24 pb-8 gap-8 justify-between">
+          {/* Text section: full width on mobile/tablet */}
           <motion.div 
-            className="flex-1 flex flex-col justify-start"
+            className="flex flex-col justify-start lg:flex-1"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
             <motion.p 
-              className="text-white leading-relaxed max-w-2xl"
+              className="text-white leading-relaxed w-full text-base lg:text-lg md:text-2xl"
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -43,9 +43,9 @@ export default function CountdownSection() {
             </motion.p>
           </motion.div>
 
-          {/* Right column: fixed width, align content bottom-right */}
+          {/* Countdown section: centered on mobile/tablet, right-aligned on large screens */}
           <motion.div 
-            className="w-full md:w-80 flex flex-col justify-end items-center md:items-end md:justify-end"
+            className="w-full flex flex-col justify-center items-center lg:w-80 lg:justify-end lg:items-end"
             initial={{ x: 100, opacity: 0, scale: 0.9 }}
             whileInView={{ x: 0, opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -53,7 +53,7 @@ export default function CountdownSection() {
           >
             <CountdownTimer
               targetDate={targetDate}
-              className="bg-white p-6 rounded-lg gap-4 flex flex-col"
+              className="bg-white p-6 md:p-8 lg:p-6 rounded-lg gap-4 flex flex-col"
             />
           </motion.div>
         </div>
