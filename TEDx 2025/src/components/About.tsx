@@ -12,9 +12,9 @@ export default function BowenSection() {
       transition={{ duration: 1 }}
       viewport={{ once: true }}
     >
-      <div className="max-w-full mx-auto relative min-h-[28rem] relative">
+      <div className="max-w-full mx-auto relative min-h-[35rem] md:min-h-[40rem]">
         <motion.div 
-          className="absolute top-0 right-0 h-full flex flex-col items-end text-right pr-6 p-4 z-20"
+          className="absolute top-0 right-0 h-full flex flex-col items-end text-right pr-6 p-4 pb-20 md:pb-24 z-20"
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -44,7 +44,7 @@ export default function BowenSection() {
             educate, and ignite transformation.
           </motion.p>
         </motion.div>
-        <img src={senateBuilding} alt="senate building" className="relative bottom-0 left-0"/>
+        <img src={senateBuilding} alt="senate building" className="absolute bottom-0 left-0 w-full h-auto sm:relative sm:w-auto sm:h-auto"/>
       </div>
     </motion.section>
   );
