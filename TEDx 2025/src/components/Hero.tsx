@@ -44,7 +44,7 @@ export default function Hero() {
 
   return (
     <motion.div 
-      className="w-full flex items-center pt-8 md:pt-30 px-4 md:px-24 h-lvh"
+      className="w-full flex flex-col lg:flex-row items-center pt-8 md:pt-30 px-4 md:px-24 h-lvh"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -75,13 +75,13 @@ export default function Hero() {
       <Header />
 
       <motion.div 
-        className="flex flex-col md:flex-row w-full text-white sm:items-start md:items-center items-center justify-between gap-8 z-10"
+        className="flex flex-col w-full text-white items-center justify-between gap-8 z-10 lg:flex-row lg:items-center lg:justify-between"
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
         <motion.div 
-          className="flex flex-col gap-4 h-full md:max-w-xl items-center sm:items-start sm:text-left"
+          className="flex flex-col gap-4 h-full md:max-w-xl items-center text-center lg:items-start lg:text-left"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -103,9 +103,10 @@ export default function Hero() {
             />
           </motion.div>
 
-          {/* Desktop / md+: show stacked headings */}
+
+          {/* Show all heading lines for md and below (tablet and mobile) */}
           <motion.h1 
-            className="hidden md:block text-3xl font-bold text-left"
+            className="hidden sm:block text-2xl sm:text-3xl md:text-4xl font-bold text-center lg:text-left"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9 }}
@@ -123,9 +124,9 @@ export default function Hero() {
             ))}
           </motion.h1>
 
-          {/* Mobile: single-line carousel with fade */}
+          {/* Mobile only: single-line carousel with fade */}
           <motion.h1
-            className={`block md:hidden text-3xl font-bold text-center transition-opacity duration-400 ${
+            className={`block sm:hidden text-2xl font-bold text-center transition-opacity duration-400 ${
               visible ? "opacity-100" : "opacity-0"
             }`}
             aria-live="polite"
@@ -137,7 +138,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.div 
-            className="hidden md:block"
+            className="hidden lg:block"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.8 }}
@@ -210,7 +211,7 @@ export default function Hero() {
 
           {/* Mobile-only CTA placed below date/location */}
           <motion.div 
-            className="md:hidden pb-12"
+            className="lg:hidden pb-12"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 2.2 }}
