@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Menu, X } from "lucide-react";
-import tedxLogo from "../assets/images/TEDx Bowen Logo.png";
+import tedxLogo from "../assets/images/TEDx Bowen Logo.webp";
 
 const navigation = [
   { name: "Home", href: "/" },

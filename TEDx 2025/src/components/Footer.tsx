@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Instagram, Linkedin } from "lucide-react";
 import { SiTiktok, SiX } from "react-icons/si";
-import logo from "../assets/images/logo-black new.webp";
+import logo from "../assets/images/logo-black_new.webp";
 
 export default function Footer() {
   const socials = [

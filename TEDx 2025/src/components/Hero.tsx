@@ -4,10 +4,10 @@ import Header from "./Header";
 import Button from "./ui/Button";
 import heroBg from "../assets/images/hero_bg.webp";
 import underline from "../assets/images/underline.png";
-import themeImg from "../assets/images/theme.png";
+import themeImg from "../assets/images/theme.webp";
 // import smallHeroBg from "../assets/images/smaller_hero-bg.png";
-import smallHeroBuilding from "../assets/images/hero_building.png";
-import smallHeroBg from "../assets/images/hero-bg.png"
+import smallHeroBuilding from "../assets/images/hero_building.webp";
+import smallHeroBg from "../assets/images/hero-bg.webp"
 
 export default function Hero() {
   const headingLines = ["Inspire minds.", "Propel action.", "Create tomorrow."];

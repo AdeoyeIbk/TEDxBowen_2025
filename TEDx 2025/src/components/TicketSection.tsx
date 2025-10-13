@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import ticketImage from "../assets/images/ticket_image.png";
+import ticketImage from "../assets/images/ticket_image.webp";
 import { Check, Ticket, Crown } from "lucide-react";
 
 const tiers = [

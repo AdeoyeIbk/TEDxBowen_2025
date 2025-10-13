@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import bg from "../assets/images/countdown-bg.png";
+import bg from "../assets/images/countdown-bg.webp";
 import CountdownTimer from "./CountdownTimer";
 
 export default function CountdownSection() {
@@ -45,7 +45,7 @@ export default function CountdownSection() {
 
           {/* Countdown section: centered on mobile/tablet, right-aligned on large screens */}
           <motion.div 
-            className="w-full flex flex-col justify-center items-center md:py-4 lg:w-96 lg:justify-end lg:items-end"
+            className="w-full flex flex-col justify-center items-center md:py-4 lg:w-96 lg:justify-end lg:items-end px-8"
             initial={{ x: 100, opacity: 0, scale: 0.9 }}
             whileInView={{ x: 0, opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
