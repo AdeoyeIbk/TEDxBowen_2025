@@ -14,6 +14,8 @@ export default function Hero() {
   const [visible, setVisible] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
+
+// changing the heading lines on mobile devices
   useEffect(() => {
     if (typeof window === "undefined") return;
     const mq = window.matchMedia("(max-width: 767px)");
@@ -23,6 +25,7 @@ export default function Hero() {
     return () => mq.removeEventListener?.("change", update);
   }, []);
 
+	
   useEffect(() => {
     if (!isMobile) return;
     const length = headingLines.length;
@@ -55,7 +58,7 @@ export default function Hero() {
         <img
           src={smallHeroBg}
           alt="hero background"
-          className="h-full w-full object-cover object-right md:object-top"
+          className="h-full w-full object-cover object-center md:object-top"
         />
       </motion.picture>
       <Header />
