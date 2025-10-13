@@ -30,7 +30,7 @@ export default function BowenSection() {
             What is TEDx Bowen University?
           </motion.h2>
           <motion.p 
-            className="text-white leading-relaxed max-w-xl lg:max-w-xl sm:max-w-sm text-sm"
+            className="text-white leading-relaxed max-w-xl lg:max-w-xl sm:max-w-sm text-sm md:text-xl"
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}

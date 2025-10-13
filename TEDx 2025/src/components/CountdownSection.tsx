@@ -15,9 +15,9 @@ export default function CountdownSection() {
       className="relative bg-left bg-no-repeat bg-cover w-full h-[100vh]"
       style={{ backgroundImage: `url(${bg})` }}
     >
-        {/* Vertical layout on mobile/tablet, horizontal on large screens */}
+       
         <div className="flex flex-col lg:flex-row w-full h-full pt-32 pl-6 md:pl-32 pr-6 md:pr-24 pb-8 gap-8 justify-between">
-          {/* Text section: full width on mobile/tablet */}
+         
           <motion.div 
             className="flex flex-col justify-start lg:flex-1"
             initial={{ x: -100, opacity: 0 }}
