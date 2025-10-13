@@ -93,7 +93,7 @@ export default function CountdownTimer({
           viewport={{ once: true }}
         >
           <motion.h4 
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-5xl font-semibold"
+            className="text-4xl sm:text-6xl md:text-8xl lg:text-5xl font-semibold"
             key={timeLeft.days}
             initial={{ scale: 1.2 }}
             animate={{ scale: 1 }}
@@ -101,11 +101,11 @@ export default function CountdownTimer({
           >
             {timeLeft.days}
           </motion.h4>
-          <p className="text-sm md:text-base">Days</p>
+          <p className="text-sm md:text-lg">Days</p>
         </motion.div>
 
         <motion.span 
-          className="font-bold"
+          className="font-bold text-xl sm:text-2xl md:text-4xl lg:text-2xl"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.6 }}
@@ -123,7 +123,7 @@ export default function CountdownTimer({
           viewport={{ once: true }}
         >
           <motion.h4 
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-5xl font-semibold"
+            className="text-4xl sm:text-6xl md:text-8xl lg:text-5xl font-semibold"
             key={timeLeft.hours}
             initial={{ scale: 1.2 }}
             animate={{ scale: 1 }}
@@ -131,11 +131,11 @@ export default function CountdownTimer({
           >
             {fmt(timeLeft.hours)}
           </motion.h4>
-          <p className="text-sm md:text-base">Hours</p>
+          <p className="text-sm md:text-lg">Hours</p>
         </motion.div>
 
         <motion.span 
-          className="font-bold"
+          className="font-bold text-xl sm:text-2xl md:text-4xl lg:text-2xl"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.7 }}
@@ -153,7 +153,7 @@ export default function CountdownTimer({
           viewport={{ once: true }}
         >
           <motion.h4 
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-5xl font-semibold"
+            className="text-4xl sm:text-6xl md:text-8xl lg:text-5xl font-semibold"
             key={timeLeft.minutes}
             initial={{ scale: 1.2 }}
             animate={{ scale: 1 }}
@@ -161,11 +161,11 @@ export default function CountdownTimer({
           >
             {fmt(timeLeft.minutes)}
           </motion.h4>
-          <p className="text-sm md:text-base">Minutes</p>
+          <p className="text-sm md:text-lg">Minutes</p>
         </motion.div>
 
         <motion.span 
-          className="font-bold"
+          className="font-bold text-xl sm:text-2xl md:text-4xl lg:text-2xl"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.8 }}
@@ -183,7 +183,7 @@ export default function CountdownTimer({
           viewport={{ once: true }}
         >
           <motion.h4 
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-5xl font-semibold"
+            className="text-4xl sm:text-6xl md:text-8xl lg:text-5xl font-semibold"
             key={timeLeft.seconds}
             initial={{ scale: 1.2 }}
             animate={{ scale: 1 }}
@@ -191,7 +191,7 @@ export default function CountdownTimer({
           >
             {fmt(timeLeft.seconds)}
           </motion.h4>
-          <p className="text-sm md:text-base">Seconds</p>
+          <p className="text-sm md:text-lg">Seconds</p>
         </motion.div>
       </motion.div>
     </motion.div>

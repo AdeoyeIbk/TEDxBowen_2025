@@ -39,7 +39,7 @@ function classNames(...classes: (string | undefined | null | false)[]) {
 export default function TicketSection() {
   return (
     <motion.div 
-      className="w-full flex flex-col items-center justify-center relative py-20 bg-gradient-to-b from-white/20 via-black/60 to-black/80"
+      className="w-full flex flex-col items-center justify-center relative py-20 bg-gradient-to-b from-white/20 via-black/60 to-black/80 px-6 sm:px-0"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -49,7 +49,7 @@ export default function TicketSection() {
       <motion.img
         src={ticketImage}
         alt="ticketImage"
-        className="h-auto mx-auto -mb-136 -top-58 z-20 relative max-w-[720px] md:max-w-[480px] lg:max-w-[640px]"
+        className="h-auto mx-auto -mb-100 sm:-mb-136 -top-48 sm:-top-58 z-20 relative max-w-[320px] md:max-w-[480px] lg:max-w-[640px]"
         initial={{ y: -50, opacity: 0, scale: 0.9 }}
         whileInView={{ y: 0, opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}

@@ -16,17 +16,17 @@ export default function CountdownSection() {
       style={{ backgroundImage: `url(${bg})` }}
     >
        
-        <div className="flex flex-col lg:flex-row w-full h-full pt-32 pl-6 md:pl-32 pr-6 md:pr-24 pb-8 gap-8 justify-between">
+  <div className="flex flex-col md:flex-col lg:flex-row w-full h-full pt-32 pl-6 md:pl-16 pr-6 md:pr-16 pb-8 gap-10 lg:gap-8 justify-between">
          
           <motion.div 
-            className="flex flex-col justify-start lg:flex-1"
+            className="flex flex-col justify-start w-full lg:flex-1"
             initial={{ x: -100, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
             <motion.p 
-              className="text-white leading-relaxed w-full text-base lg:text-lg md:text-2xl"
+              className="text-white leading-relaxed w-full text-base md:text-xl lg:text-lg"
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -45,7 +45,7 @@ export default function CountdownSection() {
 
           {/* Countdown section: centered on mobile/tablet, right-aligned on large screens */}
           <motion.div 
-            className="w-full flex flex-col justify-center items-center lg:w-80 lg:justify-end lg:items-end"
+            className="w-full flex flex-col justify-center items-center md:py-4 lg:w-96 lg:justify-end lg:items-end"
             initial={{ x: 100, opacity: 0, scale: 0.9 }}
             whileInView={{ x: 0, opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -53,7 +53,7 @@ export default function CountdownSection() {
           >
             <CountdownTimer
               targetDate={targetDate}
-              className="bg-white p-6 md:p-8 lg:p-6 rounded-lg gap-4 flex flex-col"
+              className="bg-white/95 backdrop-blur-sm p-7 md:p-9 lg:p-7 rounded-2xl gap-5 flex flex-col shadow-2xl ring-1 ring-black/5"
             />
           </motion.div>
         </div>
