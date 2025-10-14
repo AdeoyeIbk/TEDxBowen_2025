@@ -184,13 +184,13 @@ export default function Hero() {
 
           <motion.div
             className="flex items-center gap-2 sm:gap-8 pb-2 sm:pb-6 text-lg sm:text-2xl"
-            style={{ fontFamily: "Stretch Pro, sans-serif" }}
+            style={{ fontFamily: "ReservoirGrunge, sans-serif" }}
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.6 }}
           >
             <motion.p 
-              className="text-right leading-4 sm:leading-7"
+              className="text-right leading-6 sm:leading-7"
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 1.8 }}
@@ -208,7 +208,7 @@ export default function Hero() {
             />
 
             <motion.p 
-              className="text-left leading-4 sm:leading-7"
+              className="text-left leading-6 sm:leading-7"
               initial={{ x: 20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 1.8 }}

@@ -236,6 +236,7 @@ export default function Footer() {
             <motion.a
               className="font-semibold text-red-600"
               href="https://adeoye-samuel.netlify.app/"
+              target="_blank"
               whileHover={{ 
                 scale: 1.1,
                 color: "#dc2626",
