@@ -193,15 +193,59 @@ export default function Footer() {
       </div>
 
       <motion.div 
-        className="max-w-7xl mx-auto mt-6 md:mt-8 text-sm text-gray-700 flex justify-center md:justify-end"
+        className="max-w-7xl mx-auto mt-6 md:mt-8 text-sm text-gray-700 flex flex-col md:flex-row justify-center md:justify-between items-center gap-3 md:gap-0"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.9 }}
         viewport={{ once: true }}
       >
-        <p className="footer-copyright">
+        <motion.p 
+          className="footer-copyright order-2 md:order-1"
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, delay: 1.0 }}
+          viewport={{ once: true }}
+        >
           &copy; 2025 tedxbowen. All rights reserved
-        </p>
+        </motion.p>
+
+        <motion.div 
+          className="text-center md:text-right order-1 md:order-2"
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, delay: 1.1 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-sm md:text-base flex items-center justify-center md:justify-end gap-1">
+            <span>made with</span>
+            <motion.span
+              className="inline-block text-red-500"
+              animate={{
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 1,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }}
+            >
+              ❤️
+            </motion.span>
+            <span>by</span>
+            <motion.a
+              className="font-semibold text-red-600"
+              href="https://adeoye-samuel.netlify.app/"
+              whileHover={{ 
+                scale: 1.1,
+                color: "#dc2626",
+                transition: { duration: 0.2 }
+              }}
+            >
+              IBK
+            </motion.a>
+          </p>
+        </motion.div>
       </motion.div>
     </motion.footer>
   );
