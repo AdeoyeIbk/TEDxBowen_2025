@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import Header from "./Header";
 import Button from "./ui/Button";
 import heroBg from "../assets/images/hero_bg.webp";
@@ -13,7 +13,6 @@ export default function Hero() {
   const headingLines = ["Inspire minds.", "Propel action.", "Create tomorrow."];
 
   const [current, setCurrent] = useState(0);
-  const [visible, setVisible] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
   const scrollToTickets = () => {
@@ -42,12 +41,7 @@ export default function Hero() {
     if (!isMobile) return;
     const length = headingLines.length;
     const interval = setInterval(() => {
-      // fade out, change, fade in
-      setVisible(false);
-      setTimeout(() => {
-        setCurrent((c) => (c + 1) % length);
-        setVisible(true);
-      }, 400);
+      setCurrent((c) => (c + 1) % length);
     }, 3000);
     return () => clearInterval(interval);
   }, [isMobile, headingLines.length]);
@@ -136,17 +130,20 @@ export default function Hero() {
           </motion.h1>
 
           {/* Mobile only: single-line carousel with fade */}
-          <motion.h1
-            className={`block sm:hidden text-2xl font-bold text-center transition-opacity duration-400 ${
-              visible ? "opacity-100" : "opacity-0"
-            }`}
-            aria-live="polite"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-          >
-            {headingLines[current]}
-          </motion.h1>
+          <div className="block sm:hidden text-2xl font-bold text-center h-8">
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={current}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+                
+              >
+                {headingLines[current]}
+              </motion.h1>
+            </AnimatePresence>
+          </div>
 
           <motion.div 
             className="hidden lg:block"
