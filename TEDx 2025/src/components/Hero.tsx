@@ -16,6 +16,16 @@ export default function Hero() {
   const [visible, setVisible] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
+  const scrollToTickets = () => {
+    const ticketSection = document.getElementById('ticketSection');
+    if (ticketSection) {
+      ticketSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
 
 // changing the heading lines on mobile devices
   useEffect(() => {
@@ -44,6 +54,7 @@ export default function Hero() {
 
   return (
     <motion.div 
+      id="heroSection"
       className="w-full flex flex-col lg:flex-row items-center pt-24 md:pt-30 px-4 md:px-24 h-lvh"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -145,7 +156,7 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button>Get your Tickets</Button>
+            <Button onClick={scrollToTickets}>Get your Tickets</Button>
           </motion.div>
         </motion.div>
 
@@ -218,7 +229,7 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button>Get your Tickets</Button>
+            <Button onClick={scrollToTickets}>Get your Tickets</Button>
           </motion.div>
         </motion.div>
       </motion.div>

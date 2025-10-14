@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {motion} from "motion/react"
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Menu, X } from "lucide-react";
 import tedxLogo from "../assets/images/TEDx Bowen Logo.webp";
@@ -12,6 +13,17 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const scrollToTickets = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const ticketSection = document.getElementById('ticketSection');
+    if (ticketSection) {
+      ticketSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div className="bg-gray-900">
       <header className="absolute inset-x-0 top-0 z-50 mx-2 sm:mx-12">
@@ -20,7 +32,7 @@ export default function Header() {
           className="flex items-center justify-between p-6 lg:px-8"
         >
           <div className="flex lg:flex-1">
-            <a href="/" className="-m-1.5 p-1.5">
+            <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">TEDxBowen</span>
               <img alt="logo" src={tedxLogo} className="h-12 w-auto" />
             </a>
@@ -46,12 +58,19 @@ export default function Header() {
               </a>
             ))}{" "}
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <a
-                href="#"
+              <motion.a
+                href="#ticketSection"
+                onClick={scrollToTickets}
                 className="text-sm/6 font-extralight text-white bg-red-500 p-2  rounded-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                 whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 25px rgba(239, 68, 68, 0.3)"
+                }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
               >
                 Buy your Tickets <span aria-hidden="true">&rarr;</span>
-              </a>
+              </motion.a>
             </div>
           </div>
         </nav>
@@ -88,12 +107,18 @@ export default function Header() {
                       {item.name}
                     </a>
                   ))}
-                  <a
-                    href="#"
+                  <motion.a
+                    onClick={scrollToTickets}
                     className="text-sm/6 font-bold text-white bg-red-500 p-2  rounded-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                     whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 10px 25px rgba(239, 68, 68, 0.3)"
+                }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
                   >
                     Buy your Tickets <span aria-hidden="true">&rarr;</span>
-                  </a>
+                  </motion.a>
                 </div>
                 <div className="py-6"></div>
               </div>

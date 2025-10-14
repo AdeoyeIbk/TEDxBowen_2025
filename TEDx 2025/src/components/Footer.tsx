@@ -58,7 +58,8 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <motion.div 
+          <motion.a
+            href="#"
             className="flex items-center"
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -70,7 +71,7 @@ export default function Footer() {
               alt="TEDx Bowen logo"
               className="h-12 md:h-16 object-contain footer-logo-img"
             />
-          </motion.div>
+          </motion.a>
 
           <motion.hr 
             className="border-t border-gray-200"

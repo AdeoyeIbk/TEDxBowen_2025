@@ -39,6 +39,7 @@ function classNames(...classes: (string | undefined | null | false)[]) {
 export default function TicketSection() {
   return (
     <motion.div 
+      id="ticketSection"
       className="w-full flex flex-col items-center justify-center relative py-20 bg-gradient-to-b from-white/20 via-black/60 to-black/80 px-6 sm:px-0"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
