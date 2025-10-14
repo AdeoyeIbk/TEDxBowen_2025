@@ -7,7 +7,7 @@ const tiers = [
     name: "Standard Ticket",
     id: "tier-standard",
     href: "#",
-    priceMonthly: "₦7000",
+    priceMonthly: "₦7500",
     description:
       "Per individual",
     features: [
