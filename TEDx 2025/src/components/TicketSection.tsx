@@ -2,31 +2,63 @@ import { motion } from "motion/react";
 import ticketImage from "../assets/images/ticket_image.webp";
 import { Check, Ticket, Crown } from "lucide-react";
 
+// For the perks this is what should be theree 
+// Regular Ticket (General Access)
+
+
+
+// Event Access: Full access to the entire TEDx event and all sessions.
+// Branded Items: TEDx-branded carrier bag, customized jotter, and pen.
+// Event Brochure: Get the official event guide with speaker and session details.
+// Memories: Access to post-event digital photos for personal keepsakes.
+// Appreciation: Receive a personalized thank-you email after the event
+
+// VIP Ticket (Premium Experience)
+
+// (Includes everything in Regular, plus)
+
+// Exclusive Merchandise: Merch pack featuring a customized T-shirt, bottle, jotter + pen set, and a premium carrier bag.
+// Event Materials: Includes the official event brochure.
+// Special Experience Perks:
+// 	•	Reserved front-row seating for the best view.
+// 	•	Priority check-in for smooth, early entry.
+// 	•	Access to the exclusive Speaker Meet & Greet.
+// 	•	Professional photo opportunity with speakers or guests.
+// 	•	Exclusive TEDx VIP badge or wristband.
+// 	•	Post-event networking access .
+// Appreciation: Receive a personalized thank-you email celebrating your VIP support.
 const tiers = [
   {
-    name: "Standard Ticket",
+    name: "Regular Ticket (General Access)",
     id: "tier-standard",
     href: "https://ticketsbydingpay.com/events/tedxbowenuni2025",
-    priceMonthly: "₦7500",
-    description:
-      "Per individual",
+    priceMonthly: "₦7,500",
+    description: "Per individual",
     features: [
-      "Event Access: Full access to all sessions and presentations.",
-      "Jotters: Custom-branded jotters for note-taking.",
-      "Food and Beverages: Access to general food and beverage options. ",
+      "Event Access: Full access to the entire TEDx event and all sessions.",
+      "Branded Items: TEDx-branded carrier bag, customized jotter, and pen.",
+      "Event Brochure: Get the official event guide with speaker and session details.",
+      "Memories: Access to post-event digital photos for personal keepsakes.",
+      "Appreciation: Receive a personalized thank-you email after the event",
     ],
     featured: false,
   },
   {
-    name: "VIP Ticket",
+    name: "VIP Ticket (Premium Experience)",
     id: "tier-VIP",
     href: "https://ticketsbydingpay.com/events/tedxbowenuni2025",
     priceMonthly: "₦15,000",
-    description: "(includes everything in Standard, plus)",
+    description: "(Includes everything in Regular)",
     features: [
-      "Exclusive Merchandise: Extra branded items, like a T-shirt or eco-friendly tote bag.",
-      "Extra Food and Beverages: Access to additional snacks and premium drink options.",
-      "Special Seating: Reserved seating close to the stage or main presentation area.",
+      "Exclusive Merchandise: Merch pack featuring a customized T-shirt, bottle, jotter + pen set, and a premium carrier bag.",
+      "Event Materials: Includes the official event brochure.",
+      "Reserved front-row seating for the best view.",
+      "Priority check-in for smooth, early entry.",
+      "Access to the exclusive Speaker Meet & Greet.",
+      "Professional photo opportunity with speakers or guests.",
+      "Exclusive TEDx VIP badge or wristband.",
+      "Post-event networking access.",
+      "Appreciation: Receive a personalized thank-you email celebrating your VIP support.",
     ],
     featured: true,
   },
