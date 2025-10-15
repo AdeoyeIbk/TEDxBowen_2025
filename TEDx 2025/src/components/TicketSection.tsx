@@ -6,7 +6,7 @@ const tiers = [
   {
     name: "Standard Ticket",
     id: "tier-standard",
-    href: "#",
+    href: "https://ticketsbydingpay.com/events/tedxbowenuni2025",
     priceMonthly: "₦7500",
     description:
       "Per individual",
@@ -20,7 +20,7 @@ const tiers = [
   {
     name: "VIP Ticket",
     id: "tier-VIP",
-    href: "#",
+    href: "https://ticketsbydingpay.com/events/tedxbowenuni2025",
     priceMonthly: "₦15,000",
     description: "(includes everything in Standard, plus)",
     features: [
