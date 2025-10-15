@@ -13,16 +13,6 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const scrollToTickets = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const ticketSection = document.getElementById('ticketSection');
-    if (ticketSection) {
-      ticketSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  };
 
   return (
     <div className="bg-gray-900">
