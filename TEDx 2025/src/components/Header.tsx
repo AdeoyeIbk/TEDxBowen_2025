@@ -59,7 +59,7 @@ export default function Header() {
             ))}{" "}
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
               <motion.a
-                href="#ticketSection"
+                href="https://ticketsbydingpay.com/events/tedxbowenuni2025"
                 onClick={scrollToTickets}
                 className="text-sm/6 font-extralight text-white bg-red-500 p-2  rounded-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                  whileHover={{ 
@@ -82,8 +82,8 @@ export default function Header() {
           <div className="fixed inset-0 z-50" />
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10 text-red-500">
             <div className="flex items-center justify-between">
-              <a href="" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
+              <a href="#" className="-m-1.5 p-1.5">
+                <span className="sr-only">TEDxBowen</span>
                 <img alt="logo" src={tedxLogo} className="h-8 w-auto" />
               </a>
               <button
@@ -108,7 +108,7 @@ export default function Header() {
                     </a>
                   ))}
                   <motion.a
-                    onClick={scrollToTickets}
+                    href="https://ticketsbydingpay.com/events/tedxbowenuni2025"
                     className="text-sm/6 font-bold text-white bg-red-500 p-2  rounded-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                      whileHover={{ 
                   scale: 1.05,
