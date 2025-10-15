@@ -144,7 +144,7 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button onClick={scrollToTickets}>Get your Tickets</Button>
+            <Button href="https://ticketsbydingpay.com/events/tedxbowenuni2025">Get your Tickets</Button>
           </motion.div>
         </motion.div>
 

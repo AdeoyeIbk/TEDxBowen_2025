@@ -50,7 +50,6 @@ export default function Header() {
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
               <motion.a
                 href="https://ticketsbydingpay.com/events/tedxbowenuni2025"
-                onClick={scrollToTickets}
                 className="text-sm/6 font-extralight text-white bg-red-500 p-2  rounded-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                  whileHover={{ 
                   scale: 1.05,
