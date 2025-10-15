@@ -1,0 +1,10 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Sitemap location - Update with your actual domain
+Sitemap: https://tedxbowen2025.vercel.app/sitemap.xml
+
+# Disallow crawling of specific paths (if any)
+# Disallow: /admin/
+# Disallow: /private/
