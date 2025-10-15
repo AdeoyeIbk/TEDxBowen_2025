@@ -2,16 +2,16 @@ import { motion } from "motion/react"
 
 type ButtonProps = {
   children: React.ReactNode;
-  onClick?: () => void;
+  href?: string;
   id?: string;
 };
 
 
 
-export default function Button({ children, onClick, id }: ButtonProps) {
+export default function Button({ children, href, id }: ButtonProps) {
   return (
-    <motion.button
-      onClick={onClick}
+    <motion.a
+      href: {href}
       id={id}
       className="px-6 py-2 bg-red-500 text-white rounded-xs shadow-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 mt-4 sm:mt-0"
     whileHover={{ 
@@ -23,6 +23,6 @@ export default function Button({ children, onClick, id }: ButtonProps) {
                 transition={{ duration: 0.2 }}
     >
       {children}
-    </motion.button>
+    </motion.a>
   );
 }
