@@ -2,31 +2,7 @@ import { motion } from "motion/react";
 import ticketImage from "../assets/images/ticket_image.webp";
 import { Check, Ticket, Crown } from "lucide-react";
 
-// For the perks this is what should be theree 
-// Regular Ticket (General Access)
 
-
-
-// Event Access: Full access to the entire TEDx event and all sessions.
-// Branded Items: TEDx-branded carrier bag, customized jotter, and pen.
-// Event Brochure: Get the official event guide with speaker and session details.
-// Memories: Access to post-event digital photos for personal keepsakes.
-// Appreciation: Receive a personalized thank-you email after the event
-
-// VIP Ticket (Premium Experience)
-
-// (Includes everything in Regular, plus)
-
-// Exclusive Merchandise: Merch pack featuring a customized T-shirt, bottle, jotter + pen set, and a premium carrier bag.
-// Event Materials: Includes the official event brochure.
-// Special Experience Perks:
-// 	•	Reserved front-row seating for the best view.
-// 	•	Priority check-in for smooth, early entry.
-// 	•	Access to the exclusive Speaker Meet & Greet.
-// 	•	Professional photo opportunity with speakers or guests.
-// 	•	Exclusive TEDx VIP badge or wristband.
-// 	•	Post-event networking access .
-// Appreciation: Receive a personalized thank-you email celebrating your VIP support.
 const tiers = [
   {
     name: "Regular Ticket (General Access)",
@@ -181,6 +157,7 @@ export default function TicketSection() {
               </ul>
               <motion.a
                 href={tier.href}
+target="_blank"
                 aria-describedby={tier.id}
                 className={classNames(
                   tier.featured
