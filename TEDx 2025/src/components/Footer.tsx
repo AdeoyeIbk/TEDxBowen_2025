@@ -217,22 +217,7 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <p className="text-sm md:text-base flex items-center justify-center md:justify-end gap-1">
-            <span>made with</span>
-            <motion.span
-              className="inline-block text-red-500"
-              animate={{
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 1,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "easeInOut"
-              }}
-            >
-              ❤️
-            </motion.span>
-            <span>by</span>
+            <span>developed by</span>
             <motion.a
               className="font-semibold text-red-600"
               href="https://adeoye-samuel.netlify.app/"
