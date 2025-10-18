@@ -217,7 +217,7 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <p className="text-sm md:text-base flex items-center justify-center md:justify-end gap-1">
-            <span>developed by</span>
+            <span>Developed by</span>
             <motion.a
               className="font-semibold text-red-600"
               href="https://adeoye-samuel.netlify.app/"
