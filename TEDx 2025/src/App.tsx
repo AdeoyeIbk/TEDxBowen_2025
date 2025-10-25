@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Suspense, lazy, useEffect, useState } from 'react'
-import { motion } from 'motion/react'
+import { motion, AnimatePresence } from 'motion/react'
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'))
@@ -9,13 +9,14 @@ const Home = lazy(() => import('./pages/Home'))
 // Loading component with animation
 const PulseAnimation = ({ visible = true }: { visible?: boolean }) => (
   <motion.div
-    className="fixed inset-0 z-50 flex items-center justify-center bg-black"
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black h-screen p-4"
     initial={{ opacity: 0 }}
-    animate={{ opacity: visible ? 1 : 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0, transition: { duration: 0.45 } }}
     transition={{ duration: 0.45 }}
     aria-hidden={!visible}
-  >w
-    <motion.div className="flex flex-col items-center justify-center gap-4" initial={{ opacity: 0, scale: 0.85 }}
+  >
+    <motion.div className="flex flex-col items-center justify-center gap-4 max-w-full" initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: [0, 1, 1], scale: [0.85, 1.12, 0.88, 1.9] }}
         transition={{ duration: 4.5, times: [0, 0.45, 1], ease: "easeInOut" }}>
       <motion.h1
@@ -30,7 +31,7 @@ const PulseAnimation = ({ visible = true }: { visible?: boolean }) => (
       <motion.span
         className="block w-20 h-0.5 bg-red-600 rounded"
         initial={{ scaleX: 0.2, opacity: 0.6 }}
-        animate={{ scaleX: [0.2, 1.1, 0.9, 2.5], width: "full", opacity: [0.6, 1, 0.9] }}
+        animate={{ scaleX: [0.2, 1.1, 0.9, 2], width: "full", opacity: [0.6, 1, 0.9] }}
         transition={{ duration: 5.0, times: [0, 0.5, 1], ease: "easeInOut" }}
       />
     </motion.div>
@@ -58,8 +59,8 @@ function App() {
             {/* Add more routes as needed */}
           </Routes>
         </Suspense>
-        {/* intro overlay — shown while showIntro is true */}
-        {showIntro && <PulseAnimation visible={showIntro} />}
+  {/* intro overlay — shown while showIntro is true; AnimatePresence enables exit animation */}
+  <AnimatePresence>{showIntro && <PulseAnimation key="intro" visible={showIntro} />}</AnimatePresence>
       </div>
     </Router>
   )
