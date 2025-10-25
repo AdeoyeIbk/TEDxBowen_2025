@@ -7,14 +7,14 @@ import { motion } from 'motion/react'
 const Home = lazy(() => import('./pages/Home'))
 
 // Loading component with animation
-const LoadingSpinner = ({ visible = true }: { visible?: boolean }) => (
+const PulseAnimation = ({ visible = true }: { visible?: boolean }) => (
   <motion.div
     className="fixed inset-0 z-50 flex items-center justify-center bg-black"
     initial={{ opacity: 0 }}
     animate={{ opacity: visible ? 1 : 0 }}
     transition={{ duration: 0.45 }}
     aria-hidden={!visible}
-  >
+  >w
     <motion.div className="flex flex-col items-center justify-center gap-4" initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: [0, 1, 1], scale: [0.85, 1.12, 0.88, 1.9] }}
         transition={{ duration: 4.5, times: [0, 0.45, 1], ease: "easeInOut" }}>
@@ -59,7 +59,7 @@ function App() {
           </Routes>
         </Suspense>
         {/* intro overlay — shown while showIntro is true */}
-        {showIntro && <LoadingSpinner visible={showIntro} />}
+        {showIntro && <PulseAnimation visible={showIntro} />}
       </div>
     </Router>
   )
