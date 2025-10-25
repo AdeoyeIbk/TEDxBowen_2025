@@ -17,7 +17,7 @@ const PulseAnimation = ({ visible = true }: { visible?: boolean }) => (
     aria-hidden={!visible}
   >
     <motion.div className="flex flex-col items-center justify-center gap-4 max-w-full" initial={{ opacity: 0, scale: 0.85 }}
-        animate={{ opacity: [0, 1, 1], scale: [0.85, 1.12, 0.88, 1.9] }}
+        animate={{ opacity: [0, 1, 1], scale: [0.85, 1.12, 0.88, 1.6] }}
         transition={{ duration: 4.5, times: [0, 0.45, 1], ease: "easeInOut" }}>
       <motion.h1
         className="text-white font-bold tracking-tight text-2xl md:text-4xl"
