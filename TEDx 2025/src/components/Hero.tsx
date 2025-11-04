@@ -186,7 +186,7 @@ export default function Hero() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 1.8 }}
             >
-              29th NOV <br /> 2025
+              Saturday, <br /> 29th NOV <br /> 2025
             </motion.p>
 
             {/* divider: horizontal on small screens, vertical on md+ */}
