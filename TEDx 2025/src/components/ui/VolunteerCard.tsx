@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 
 type Volunteer = {
@@ -14,11 +15,34 @@ type VolunteerCardProps = {
   volunteer: Volunteer;
 };
 
+// simple responsive hook
+function useIsDesktop(breakpoint = 640) {
+  const [isDesktop, setIsDesktop] = useState(
+    typeof window !== "undefined" ? window.innerWidth >= breakpoint : true
+  );
+
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= breakpoint);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [breakpoint]);
+
+  return isDesktop;
+}
+
 export default function VolunteerCard({ volunteer }: VolunteerCardProps) {
+  const isDesktop = useIsDesktop(640); // sm breakpoint
+
   return (
     <motion.div
       layout
-      whileHover={{ width: '30rem' }} transition={{ type: 'tween', duration: 0.35, ease: 'easeOut' }} 
+      // only animate on desktop
+      whileHover={isDesktop ? { width: "30rem" } : {}}
+      transition={
+        isDesktop
+          ? { type: "tween", duration: 0.35, ease: "easeOut" }
+          : { duration: 0 }
+      }
       className="group relative text-white p-4 rounded-lg shadow-md flex gap-4 mx-4 bg-white/10 overflow-hidden cursor-pointer"
     >
       {/* Left side (text + arrow) */}
@@ -34,7 +58,7 @@ export default function VolunteerCard({ volunteer }: VolunteerCardProps) {
           href={volunteer.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center h-10 w-10 rounded-full bg-gray-500 transition-all duration-300 transform group-hover:opacity-0 group-hover:scale-75 group-hover:pointer-events-none"
+          className="flex items-center justify-center h-10 w-10 rounded-full bg-gray-500 transition-all duration-300 transform sm:group-hover:opacity-0 sm:group-hover:scale-75 sm:group-hover:pointer-events-none"
         >
           <ArrowUp
             className="text-white"
@@ -43,8 +67,14 @@ export default function VolunteerCard({ volunteer }: VolunteerCardProps) {
         </a>
       </div>
 
-      {/* Image panel: hidden off-canvas to the right, slides in on parent hover */}
-      <div className="absolute top-0 right-0 h-full w-48 sm:w-64 rounded-md overflow-hidden transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-10">
+      {/* Image panel */}
+      <div
+        className={`absolute top-0 right-0 h-full w-48 sm:w-64 rounded-md overflow-hidden transform ${
+          isDesktop
+            ? "translate-x-full sm:group-hover:translate-x-0 transition-transform duration-500 ease-out"
+            : "hidden"
+        } z-10`}
+      >
         <img
           className="w-full h-full object-cover"
           src={volunteer.image}
