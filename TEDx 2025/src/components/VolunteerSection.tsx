@@ -34,7 +34,7 @@ export default function VolunteerSection() {
   return <>
     <section 
          id="volunteerSection"
-         className="w-full flex flex-col items-center justify-center relative py-28 px-6">
+         className="w-full flex flex-col items-center justify-center relative py-32 px-6">
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-8">
         <h2 className="text-3xl md:text-4xl text-white font-medium">Become a Volunteer</h2>
         {/* volunteer cards */}

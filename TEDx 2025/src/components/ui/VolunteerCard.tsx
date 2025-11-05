@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import { ArrowUp } from "lucide-react";
 
 type Volunteer = {
@@ -13,24 +16,36 @@ type VolunteerCardProps = {
 
 export default function VolunteerCard({ volunteer }: VolunteerCardProps) {
   return (
-    <div className="volunteer-card group text-white p-4 rounded-lg shadow-md flex gap-4 mx-4 bg-white/10">
-      <div className="flex flex-col gap-4 w-48 justify-around">
+    <motion.div
+      layout
+      whileHover={{ width: "32rem" }} // expands on hover
+      transition={{ type: "spring", stiffness: 200, damping: 20 }}
+      className="group relative text-white p-4 rounded-lg shadow-md flex gap-4 mx-4 bg-white/10 overflow-hidden cursor-pointer"
+    >
+      {/* Left side (text + arrow) */}
+      <div className="flex flex-col gap-4 w-48 justify-around z-10">
         <div className="flex flex-col">
-          <h3 className="text-2xl font-semibold capitalize">{volunteer.group}</h3>
+          <h3 className="text-2xl font-semibold capitalize">
+            {volunteer.group}
+          </h3>
           <p className="text-left text-sm">{volunteer.description}</p>
         </div>
+
         <a
           href={volunteer.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="bottom-3 right-3 flex items-center justify-center h-10 w-10 rounded-full bg-gray-500 transition-all duration-300"
+          className="flex items-center justify-center h-10 w-10 rounded-full bg-gray-500 transition-all duration-300 transform group-hover:opacity-0 group-hover:scale-75 group-hover:pointer-events-none"
         >
-          <ArrowUp className="text-white" style={{ transform: 'rotate(45deg)', transformOrigin: 'center' }} />
+          <ArrowUp
+            className="text-white"
+            style={{ transform: "rotate(45deg)", transformOrigin: "center" }}
+          />
         </a>
       </div>
-      {/* image */}
 
-      <div className="relative overflow-hidden w-48 h-36 sm:w-64 sm:h-44 rounded-md">
+      {/* Image panel: hidden off-canvas to the right, slides in on parent hover */}
+      <div className="absolute top-0 right-0 h-full w-48 sm:w-64 rounded-md overflow-hidden transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-10">
         <img
           className="w-full h-full object-cover"
           src={volunteer.image}
@@ -43,9 +58,12 @@ export default function VolunteerCard({ volunteer }: VolunteerCardProps) {
           rel="noopener noreferrer"
           className="absolute bottom-3 right-3 flex items-center justify-center h-10 w-10 rounded-full bg-gray-500 transition-all duration-300"
         >
-          <ArrowUp className="text-white" style={{ transform: 'rotate(45deg)', transformOrigin: 'center' }} />
+          <ArrowUp
+            className="text-white"
+            style={{ transform: "rotate(35deg)", transformOrigin: "center" }}
+          />
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }
