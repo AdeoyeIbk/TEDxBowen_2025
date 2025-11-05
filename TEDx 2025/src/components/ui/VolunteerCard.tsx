@@ -18,14 +18,13 @@ export default function VolunteerCard({ volunteer }: VolunteerCardProps) {
   return (
     <motion.div
       layout
-      whileHover={{ width: "32rem" }} // expands on hover
-      transition={{ type: "spring", stiffness: 200, damping: 20 }}
+      whileHover={{ width: '30rem' }} transition={{ type: 'tween', duration: 0.35, ease: 'easeOut' }} 
       className="group relative text-white p-4 rounded-lg shadow-md flex gap-4 mx-4 bg-white/10 overflow-hidden cursor-pointer"
     >
       {/* Left side (text + arrow) */}
       <div className="flex flex-col gap-4 w-48 justify-around z-10">
         <div className="flex flex-col">
-          <h3 className="text-2xl font-semibold capitalize">
+          <h3 className="text-2xl font-semibold capitalize text-left">
             {volunteer.group}
           </h3>
           <p className="text-left text-sm">{volunteer.description}</p>
