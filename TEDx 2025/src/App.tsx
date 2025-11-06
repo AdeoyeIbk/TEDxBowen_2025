@@ -2,6 +2,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Suspense, lazy, useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
+import BackToTop from './components/ui/BackToTop'
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'))
@@ -61,6 +62,8 @@ function App() {
         </Suspense>
   {/* intro overlay — shown while showIntro is true; AnimatePresence enables exit animation */}
   <AnimatePresence>{showIntro && <PulseAnimation key="intro" visible={showIntro} />}</AnimatePresence>
+        {/* back-to-top button visible after scrolling down */}
+        <BackToTop />
       </div>
     </Router>
   )
