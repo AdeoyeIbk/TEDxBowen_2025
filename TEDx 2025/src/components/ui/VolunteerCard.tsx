@@ -36,13 +36,14 @@ export default function VolunteerCard({ volunteer }: VolunteerCardProps) {
   return (
     <motion.div
       layout
-      // only animate on desktop
-      whileHover={isDesktop ? { width: "30rem" } : {}}
-      transition={
-        isDesktop
-          ? { type: "tween", duration: 0.35, ease: "easeOut" }
-          : { duration: 0 }
-      }
+      // only animate expansion on desktop (keeps previous behavior)
+      whileHover={isDesktop ? { width: "30rem", scale: 1.01 } : {}}
+      whileTap={isDesktop ? "" : {scale: 1.01}}
+      transition={isDesktop ? { type: "tween", duration: 0.35, ease: "easeOut" } : { duration: 0 }}
+      // subtle entrance if not already animated by parent wrapper
+      initial={{ opacity: 0, y: 6 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
       className="group relative text-white p-4 rounded-lg shadow-md flex gap-4 mx-4 bg-white/10 overflow-hidden cursor-pointer"
     >
       {/* Left side (text + arrow) */}
@@ -54,17 +55,17 @@ export default function VolunteerCard({ volunteer }: VolunteerCardProps) {
           <p className="text-left text-sm">{volunteer.description}</p>
         </div>
 
-        <a
+        <motion.a
           href={volunteer.link}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center h-10 w-10 rounded-full bg-gray-500 transition-all duration-300 transform sm:group-hover:opacity-0 sm:group-hover:scale-75 sm:group-hover:pointer-events-none"
+          whileHover={{ scale: 1.06 }}
+          whileTap={{ scale: 0.96 }}
+          aria-label={`Open ${volunteer.group} signup`}
         >
-          <ArrowUp
-            className="text-white"
-            style={{ transform: "rotate(45deg)", transformOrigin: "center" }}
-          />
-        </a>
+          <ArrowUp className="text-white" style={{ transform: "rotate(45deg)", transformOrigin: "center" }} />
+        </motion.a>
       </div>
 
       {/* Image panel */}
@@ -81,17 +82,17 @@ export default function VolunteerCard({ volunteer }: VolunteerCardProps) {
           alt={volunteer.group}
         />
 
-        <a
+        <motion.a
           href={volunteer.link}
           target="_blank"
           rel="noopener noreferrer"
           className="absolute bottom-3 right-3 flex items-center justify-center h-10 w-10 rounded-full bg-gray-500 transition-all duration-300"
+          whileHover={{ scale: 1.08, rotate: 5 }}
+          whileTap={{ scale: 0.96 }}
+          aria-label={`Open ${volunteer.group} signup`}
         >
-          <ArrowUp
-            className="text-white"
-            style={{ transform: "rotate(35deg)", transformOrigin: "center" }}
-          />
-        </a>
+          <ArrowUp className="text-white" style={{ transform: "rotate(35deg)", transformOrigin: "center" }} />
+        </motion.a>
       </div>
     </motion.div>
   );

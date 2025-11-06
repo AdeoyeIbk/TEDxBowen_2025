@@ -1,4 +1,5 @@
 import VolunteerCard from "./ui/VolunteerCard";
+import { motion } from 'motion/react'
 import WelfareImage from "../assets/images/volunteer_welfare.png";
 import MediaImage from "../assets/images/volunteer_media.png";
 import LogisticsImage from "../assets/images/volunteer_logistics.png";
@@ -36,13 +37,30 @@ export default function VolunteerSection() {
          id="volunteerSection"
          className="w-full flex flex-col items-center justify-center relative py-32 px-2 sm:px-6">
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-8">
-        <h2 className="text-3xl md:text-4xl text-white font-medium">Become a Volunteer</h2>
+        <motion.h2
+          className="text-3xl md:text-4xl text-white font-medium"
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          Become a Volunteer
+        </motion.h2>
+
         {/* volunteer cards */}
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8 w-full">
           {/* map over the volunteer array with the volunteer cards component */}
-         {volunteer.map((volunteer) => (
-           <VolunteerCard key={volunteer.id} volunteer={volunteer} />
-         ))}
+          {volunteer.map((v, i) => (
+            <motion.div
+              key={v.id}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.12, duration: 0.6, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <VolunteerCard volunteer={v} />
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
