@@ -38,7 +38,7 @@ export default function VolunteerSection() {
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-8">
         <h2 className="text-3xl md:text-4xl text-white font-medium">Become a Volunteer</h2>
         {/* volunteer cards */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-8 w-full">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-8 w-full">
           {/* map over the volunteer array with the volunteer cards component */}
          {volunteer.map((volunteer) => (
            <VolunteerCard key={volunteer.id} volunteer={volunteer} />
