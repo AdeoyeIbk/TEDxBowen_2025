@@ -7,7 +7,7 @@ const BowenSection = lazy(() => import('../components/About'))
 const Quote = lazy(() => import('../components/Quote'))
 const CountdownSection = lazy(() => import('../components/CountdownSection'))
 const TicketSection = lazy(() => import('../components/TicketSection'))
-const VolunteerSection = lazy(() => import('../components/VolunteerSection'))
+// const VolunteerSection = lazy(() => import('../components/VolunteerSection'))
 const Footer = lazy(() => import('../components/Footer'))
 
 // Section loading component
@@ -62,9 +62,9 @@ export default function Home() {
         <TicketSection />
       </Suspense>
 
-        <Suspense fallback={<SectionLoader name="Volunteer" />}>
+        {/* <Suspense fallback={<SectionLoader name="Volunteer" />}>
           <VolunteerSection />
-        </Suspense>
+        </Suspense> */}
 
       <Suspense fallback={<SectionLoader name="Footer" />}>
         <Footer />
