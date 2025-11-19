@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import ticketImage from "../assets/images/ticket_image.webp";
 import { Check, Ticket, Crown } from "lucide-react";
+import SoldOutStamp from "./ui/SoldOutStamp";
 
 
 const tiers = [
@@ -67,8 +68,8 @@ export default function TicketSection() {
       />
       {/* <div className="flex flex-col sm:flex-row w-full justify-between"></div> */}
       <div className="relative isolatepx-6 py-24 sm:py-32 lg:px-8">
-        {/* ticket */}
-        <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
+        {/* ticket container*/}
+        <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2 ">
           {tiers.map((tier, tierIdx) => (
             <motion.div
               key={tier.id}
@@ -89,10 +90,10 @@ export default function TicketSection() {
     tier.featured
       ? "border-2 border-red-500 animate-pulse shadow-[0_0_15px_rgba(239,68,68,0.6)]"
       : "border border-white/10",
-    "rounded-3xl p-8 sm:p-10 bg-white/10 transition-all duration-700"
+    "rounded-3xl p-8 sm:p-10 bg-white/10 transition-all duration-700 relative"
   )}
 >
-
+<SoldOutStamp />
                 <div
                   id={tier.id}
                   className={classNames(
@@ -161,8 +162,8 @@ export default function TicketSection() {
                 aria-describedby={tier.id}
                 className={classNames(
                   tier.featured
-                    ? "bg-red-800 text-white hover:bg-red-900 focus-visible:outline-red-500"
-                    : "bg-red-500 text-white hover:bg-red-700 focus-visible:outline-red/75",
+                    ? "bg-red-800 text-white focus-visible:outline-red-500"
+                    : "bg-red-500 text-white focus-visible:outline-red/75",
                   "mt-8 w-full block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10 opacity-70 cursor-not-allowed"
                 )}
                 disabled
