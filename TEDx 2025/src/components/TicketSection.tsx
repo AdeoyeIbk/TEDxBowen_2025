@@ -65,8 +65,9 @@ export default function TicketSection() {
         viewport={{ once: true }}
         whileHover={{ scale: 1.05, rotateY: 5 }}
       />
-      <div className="flex flex-col sm:flex-row w-full justify-between"></div>
+      {/* <div className="flex flex-col sm:flex-row w-full justify-between"></div> */}
       <div className="relative isolatepx-6 py-24 sm:py-32 lg:px-8">
+        {/* ticket */}
         <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
           {tiers.map((tier, tierIdx) => (
             <motion.div
@@ -155,25 +156,19 @@ export default function TicketSection() {
                   </motion.li>
                 ))}
               </ul>
-              <motion.a
-                href={tier.href}
-target="_blank"
+              <motion.button
+                type="button"
                 aria-describedby={tier.id}
                 className={classNames(
                   tier.featured
                     ? "bg-red-800 text-white hover:bg-red-900 focus-visible:outline-red-500"
-                    : " bg-red-500 text-white  hover:bg-red-700 focus-visible:outline-red/75",
-                  "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10",
+                    : "bg-red-500 text-white hover:bg-red-700 focus-visible:outline-red/75",
+                  "mt-8 w-full block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10 opacity-70 cursor-not-allowed"
                 )}
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 10px 25px rgba(239, 68, 68, 0.3)"
-                }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
+                disabled
               >
-                Buy your tickets
-              </motion.a>
+                Sold Out
+              </motion.button>
             </motion.div>
           ))}
         </div>
