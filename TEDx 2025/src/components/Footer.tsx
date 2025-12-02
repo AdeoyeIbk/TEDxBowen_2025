@@ -206,7 +206,7 @@ export default function Footer() {
           transition={{ duration: 0.4, delay: 1.0 }}
           viewport={{ once: true }}
         >
-          &copy; 2025 tedxbowen. All rights reserved
+          &copy; 2025 TEDxBowen. All rights reserved
         </motion.p>
 
         <motion.div 
