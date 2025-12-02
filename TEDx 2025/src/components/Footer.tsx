@@ -71,7 +71,7 @@ export default function Footer() {
               alt="TEDx Bowen logo"
               className="h-12 md:h-16 object-contain footer-logo-img"
             />
-            <p className="text-sm font-medium"><span className="text-red-600">x</span> -independently organized TED event</p>
+            <p className="text-xs md:text-sm font-medium"><span className="text-red-600">x</span> -independently organized TED event</p>
           </motion.a>
 
           <motion.hr 
