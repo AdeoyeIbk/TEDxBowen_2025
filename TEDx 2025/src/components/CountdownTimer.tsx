@@ -58,7 +58,7 @@ export default function CountdownTimer({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [target]);
 
-  const fmt = (n: number) => String(n).padStart(2, "0");
+  // const fmt = (n: number) => String(n).padStart(2, "0");
 
   return (
     <motion.div 
@@ -78,7 +78,7 @@ export default function CountdownTimer({
         <p className="text-black text-sm">Countdown to TEDx 2025</p>
       </motion.div>
 
-      <motion.div 
+      {/* <motion.div 
         className="flex gap-6 sm:gap-10 md:gap-12 lg:gap-8 items-center text-red-500"
         initial={{ y: 30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -193,7 +193,25 @@ export default function CountdownTimer({
           </motion.h4>
           <p className="text-sm md:text-lg">Seconds</p>
         </motion.div>
+      </motion.div> */}
+
+      <motion.div 
+        className="flex gap-6 sm:gap-10 md:gap-12 lg:gap-8 items-center text-red-500"
+        initial={{ y: 30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
+        <motion.h4 
+            className="text-6xl sm:text-6xl md:text-8xl lg:text-5xl font-semibold"
+            initial={{ scale: 1.2 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            D-day
+          </motion.h4>
       </motion.div>
+      
     </motion.div>
   );
 }

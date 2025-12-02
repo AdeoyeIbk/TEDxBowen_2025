@@ -6,7 +6,7 @@ import tedxLogo from "../assets/images/TEDx Bowen Logo.webp";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
+  { name: "About TED", href: "https://www.ted.com/" },
   { name: "Event", href: "/event" },
 ];
 

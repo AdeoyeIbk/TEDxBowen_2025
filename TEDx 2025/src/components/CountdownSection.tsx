@@ -4,7 +4,7 @@ import CountdownTimer from "./CountdownTimer";
 
 export default function CountdownSection() {
   // set target date 
-  const targetDate = new Date("2025-11-28T00:00:00"); // YYYY-MM-DDTHH:mm:ss (local)
+  const targetDate = new Date("2025-11-29T00:00:00"); // YYYY-MM-DDTHH:mm:ss (local)
 
   return (
     <motion.section
@@ -53,7 +53,7 @@ export default function CountdownSection() {
           >
             <CountdownTimer
               targetDate={targetDate}
-              className="bg-white/95 backdrop-blur-sm p-7 md:p-9 lg:p-7 rounded-2xl gap-5 flex flex-col shadow-2xl ring-1 ring-black/5"
+              className="bg-white/95 backdrop-blur-sm p-7 md:p-9 lg:p-7 rounded-2xl gap-5 flex flex-col shadow-2xl ring-1 ring-black/5 w-100%"
             />
           </motion.div>
         </div>
