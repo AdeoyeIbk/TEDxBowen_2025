@@ -203,12 +203,12 @@ export default function CountdownTimer({
         viewport={{ once: true }}
       >
         <motion.h4 
-            className="text-6xl sm:text-6xl md:text-8xl lg:text-5xl font-semibold"
+            className="text-5xl md:text-7xl lg:text-5xl font-semibold"
             initial={{ scale: 1.2 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.2 }}
           >
-            D-day
+            Thank you for coming!
           </motion.h4>
       </motion.div>
       

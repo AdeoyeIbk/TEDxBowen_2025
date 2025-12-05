@@ -16,7 +16,7 @@ export default function CountdownSection() {
       style={{ backgroundImage: `url(${bg})` }}
     >
        
-  <div className="flex flex-col md:flex-col lg:flex-row w-full h-full pt-32 pl-6 md:pl-16 pr-6 md:pr-16 pb-8 gap-10 lg:gap-8 justify-between">
+  <div className="flex flex-col md:flex-col  w-full h-full pt-32 pl-6 md:pl-16 pr-6 md:pr-16 pb-8 gap-10 lg:gap-8 justify-between">
          
           <motion.div 
             className="flex flex-col justify-start w-full lg:flex-1"
@@ -45,7 +45,7 @@ export default function CountdownSection() {
 
           {/* Countdown section: centered on mobile/tablet, right-aligned on large screens */}
           <motion.div 
-            className="w-full flex flex-col justify-center items-center md:py-4 lg:w-96 lg:justify-end lg:items-end px-8"
+            className="w-full flex flex-col justify-center items-center md:py-4 lg:justify-end lg:items-end px-8"
             initial={{ x: 100, opacity: 0, scale: 0.9 }}
             whileInView={{ x: 0, opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
