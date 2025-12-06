@@ -68,7 +68,7 @@ export default function CountdownTimer({
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <motion.div 
+      {/* <motion.div 
         className="self-end"
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -76,7 +76,7 @@ export default function CountdownTimer({
         viewport={{ once: true }}
       >
         <p className="text-black text-sm">Countdown to TEDx 2025</p>
-      </motion.div>
+      </motion.div> */}
 
       {/* <motion.div 
         className="flex gap-6 sm:gap-10 md:gap-12 lg:gap-8 items-center text-red-500"
