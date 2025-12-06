@@ -60,7 +60,7 @@ export default function Footer() {
         >
           <motion.a
             href="#"
-            className="flex items-center"
+            className="flex items-start flex-col"
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -71,6 +71,7 @@ export default function Footer() {
               alt="TEDx Bowen logo"
               className="h-12 md:h-16 object-contain footer-logo-img"
             />
+            <p className="text-xs md:text-sm font-medium"><span className="text-red-600">x</span> -independently organized TED event</p>
           </motion.a>
 
           <motion.hr 
@@ -206,7 +207,7 @@ export default function Footer() {
           transition={{ duration: 0.4, delay: 1.0 }}
           viewport={{ once: true }}
         >
-          &copy; 2025 tedxbowen. All rights reserved
+          &copy; 2025 TEDxBowen. All rights reserved
         </motion.p>
 
         <motion.div 

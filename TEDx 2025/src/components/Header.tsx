@@ -6,7 +6,7 @@ import tedxLogo from "../assets/images/TEDx Bowen Logo.webp";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
+  { name: "About TED", href: "https://www.ted.com/" },
   { name: "Event", href: "/event" },
 ];
 
@@ -24,7 +24,7 @@ export default function Header() {
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">TEDxBowen</span>
-              <img alt="logo" src={tedxLogo} className="h-12 w-auto" />
+              <img alt="logo" src={tedxLogo} className="h-14 w-auto" />
             </a>
           </div>
           <div className="flex lg:hidden">
